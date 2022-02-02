@@ -4,10 +4,10 @@
 
 include './class/StrUtils.php';
 
-$myStr = new StrUtils("Une phrase", "bold", "italic", "underline", "capitalize");
+$cat = new StrUtils("Une phrase");
 
-echo $myStr->getBold()."<br>";
-echo $myStr->getCapitalize()."<br>";
-echo $myStr->getItalic()."<br>";
-echo $myStr->getUnderline()."<br>";
-echo $myStr->uglify()."<br>";
+echo $cat->bold()."<br>";
+echo $cat->italic()."<br>";
+echo $cat->underline()."<br>";
+echo $cat->capitalize()."<br>";
+echo $cat->uglify()."<br>";

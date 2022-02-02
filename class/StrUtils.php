@@ -1,22 +1,19 @@
 <?php
 
 class StrUtils {
+    private string $str;
 
-    private String $str ;
-    public $bold ;
-    public $italic ;
-    public $underline ;
-    public $capitalize;
-
-    public function __construct ($str, $bold, $italic, $underline, $capitalize) {
+    /**
+     * StrUtils constructor.
+     * @param string $str
+     */
+    public function __construct(string $str)
+    {
         $this->setStr($str);
-        $this->setBold($bold);
-        $this->setItalic($italic);
-        $this->setUnderline($underline);
-        $this->setCapitalize($capitalize);
     }
 
     /**
+     *  return str
      * @return string
      */
     public function getStr(): string
@@ -25,6 +22,7 @@ class StrUtils {
     }
 
     /**
+     * set stt
      * @param string $str
      */
     public function setStr(string $str): void
@@ -33,72 +31,50 @@ class StrUtils {
     }
 
     /**
+     * apply bold
      * @return string
      */
-    public function getBold(): string
-    {
-        return $this->bold;
+    public function bold() : string{
+
+            return "<span style='font-weight: bold'>".$this->getStr()."</span>";
+
     }
 
     /**
-     * @param string $bold
-     */
-    public function setBold(string $bold): void
-    {
-        $this->bold = $bold;
-    }
-
-    /**
+     * apply italic
      * @return string
      */
-    public function getItalic(): string
-    {
-        return $this->italic;
+    public function italic() : string{
+
+            return "<span style='font-style: italic'>".$this->getStr()."</span>";
+
     }
 
     /**
-     * @param string $italic
-     */
-    public function setItalic(string $italic): void
-    {
-        $this->italic = $italic;
-    }
-
-    /**
+     * apply underline
      * @return string
      */
-    public function getUnderline(): string
-    {
-        return $this->underline;
+    public function underline() : string{
+
+            return "<span style='text-decoration-line: underline'>".$this->getStr()."</span>";
+
     }
 
     /**
-     * @param string $underline
-     */
-    public function setUnderline(string $underline): void
-    {
-        $this->underline = $underline;
-    }
-
-    /**
+     * apply capitalize
      * @return string
      */
-    public function getCapitalize(): string
-    {
-        return $this->capitalize;
+    public function capitalize() : string{
+
+            return "<span style='text-transform: capitalize'>".$this->getStr()."</span>";
+
     }
 
     /**
-     * @param string $capitalize
+     * apply bold, italic and underline
+     * @return string
      */
-    public function setCapitalize(string $capitalize): void
-    {
-        $this->capitalize = $capitalize;
-    }
-
-    public function uglify () {
+    public function uglify ()  : string{
         return "<span style='text-decoration: underline; text-transform: capitalize'><bold><i>$this->str</i></bold></span>";
     }
-
 }
-
